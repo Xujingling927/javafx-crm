@@ -43,9 +43,8 @@ public class MainController {
 
     @FXML
     protected void onAddButtonClick() {
-        Vendor vendor = new Vendor();
-        vendor.setBusinessName(addVendorField.getText());
         ObservableList<Vendor> data = vendorView.getItems();
+        Vendor vendor = new Vendor(data.size() +1,addVendorField.getText(), 0, " ");
         data.add(vendor);
         addVendorField.setText("");
         vendorView.setItems(data);
